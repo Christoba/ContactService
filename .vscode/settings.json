@@ -1,0 +1,18 @@
+{
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.trimTrailingWhitespace": true,
+  "[csharp]": {
+    "editor.tabSize": 4,
+  },
+  "[groovy]": {
+    "editor.tabSize": 2,
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+  },
+  "[powershell]": {
+    "editor.tabSize": 2,
+  }  
+}

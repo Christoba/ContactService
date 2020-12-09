@@ -1,0 +1,39 @@
+name: "CIWorkflow"
+on:
+  push:
+    paths-ignore:
+      - ".vscode/**"
+
+jobs:
+  ci_build:
+    name: Build-Test-Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Dotnet Build
+        shell: bash
+        run: |
+          dotnet tool restore
+          dotnet paket install
+          dotnet build ./src/ContactService.sln
+        id: dotnet_build
+
+      - name: Run Tests
+        shell: bash
+        run: |
+          dotnet test ./src/ContactService.sln
+        id: run_tests
+
+      - name: Publish
+        shell: pwsh
+        env:
+          AZURE_CLIENT_SECRET: "${{ secrets.CLIENT_SECRET }}"
+        run: |
+          Install-Module Az -RequiredVersion 4.8.0 -Force
+          dotnet build ./src/ContactService.sln -c Release
+          dotnet publish ./src/ContactService.sln -c Release
+          Compress-Archive -Path "./src/ContactService/bin/Release/netstandard2.1/publish/*" -DestinationPath 'deployment.zip' -Force
+          ./automation/scripts/PublishAppService.ps1 -ClientSecret $env:AZURE_CLIENT_SECRET -DeployArchive 'deployment.zip' -Verbose
+        id: publish

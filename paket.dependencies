@@ -1,0 +1,43 @@
+framework: netstandard2.1
+source https://nuget.org/api/v2
+
+nuget BouncyCastle
+nuget Castle.Core
+nuget Microsoft.AspNetCore
+nuget Microsoft.Azure.DocumentDB
+nuget Microsoft.Azure.DocumentDB.Core
+nuget Microsoft.Azure.KeyVault
+nuget Microsoft.Azure.KeyVault.WebKey
+nuget Microsoft.Azure.Services.AppAuthentication
+nuget Microsoft.Azure.WebJobs
+nuget Microsoft.Azure.WebJobs.Core
+nuget Microsoft.Azure.WebJobs.Extensions
+nuget Microsoft.Azure.WebJobs.Extensions.CosmosDB
+nuget Microsoft.Azure.WebJobs.Extensions.EventHubs
+nuget Microsoft.Azure.WebJobs.Extensions.Http
+nuget Microsoft.Azure.WebJobs.Extensions.Storage
+nuget Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator
+
+nuget Microsoft.Extensions.Configuration 3.1.9
+nuget Microsoft.Extensions.Configuration.Abstractions 3.1.9
+nuget Microsoft.Extensions.Configuration.EnvironmentVariables 3.1.9
+nuget Microsoft.Extensions.Configuration.FileExtensions 3.1.9
+nuget Microsoft.Extensions.Configuration.Json 3.1.9
+nuget Microsoft.Extensions.DependencyInjection.Abstractions 3.1.9
+nuget Microsoft.Extensions.Logging 3.1.9
+nuget Microsoft.Extensions.Logging.Abstractions 3.1.9
+
+nuget Microsoft.IdentityModel.Clients.ActiveDirectory
+nuget Microsoft.NET.Sdk.Functions
+nuget Microsoft.Rest.ClientRuntime
+nuget Microsoft.Rest.ClientRuntime.Azure
+nuget Moq
+nuget Newtonsoft.Json = 11.0.2
+nuget NUnit
+nuget Polly
+nuget Serilog
+nuget Serilog.Sinks.ILogger
+nuget System.Configuration.ConfigurationManager
+nuget System.Threading.Tasks.Extensions
+nuget NUnit3TestAdapter
+nuget Microsoft.NET.Test.Sdk

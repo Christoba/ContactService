@@ -1,0 +1,16 @@
+{
+  "TenantId": "3e9a1c0d-1f85-46bb-8642-316d22b31358",
+  "SubscriptionId": "f11076d3-d1cb-466b-95cc-81a7ec913545",
+  "ClientId": "64d29d51-a5a4-4e94-88ba-88cf5e0ba0ef",
+  "ResourceGroupName": "contact-service",
+  "PrimaryLocation": "Central US",
+  "StorageAccountName": "contactstorage1208",
+  "FunctionAppName": "contact-service-1208",
+  "ApplicationInsights": "contact-service-1208",
+  "AzureFunctionKeyVaultName": "kv-contact-service-1208",
+  "AzureFunctionKeySecretName": "function-app-key",
+  "CosmosDbAccountName": "cos-contact-service-1208",
+  "CosmosDbDatabaseName": "contactservicedb",
+  "CosmosDbCollectionNameUser": "users",
+  "CosmosDbCollectionNameContact": "contacts"
+}

@@ -1,0 +1,5 @@
+NUnit
+Moq
+Serilog
+NUnit3TestAdapter
+Microsoft.NET.Test.Sdk

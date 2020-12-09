@@ -1,0 +1,22 @@
+name: "DeleteResources"
+on:
+  workflow_dispatch:
+    paths-ignore:
+      - ".vscode/**"
+
+jobs:
+  create_resources:
+    name: Delete Azure Resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Run Delete
+        shell: pwsh
+        env:
+          AZURE_CLIENT_SECRET: "${{ secrets.CLIENT_SECRET }}"
+        run: |
+          Install-Module Az -RequiredVersion 4.8.0 -Force
+          ./automation/scripts/DeleteAzureResources.ps1 -ClientSecret $env:AZURE_CLIENT_SECRET -Verbose
+        id: azure_delete

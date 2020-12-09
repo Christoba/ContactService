@@ -1,0 +1,22 @@
+name: "CreateResources"
+on:
+  workflow_dispatch:
+    paths-ignore:
+      - ".vscode/**"
+
+jobs:
+  create_resources:
+    name: Create Azure Resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Run Deploy
+        shell: pwsh
+        env:
+          AZURE_CLIENT_SECRET: "${{ secrets.CLIENT_SECRET }}"
+        run: |
+          Install-Module Az -RequiredVersion 4.8.0 -Force
+          ./automation/scripts/CreateAzureResources.ps1 -ClientSecret $env:AZURE_CLIENT_SECRET -Verbose
+        id: azure_deploy

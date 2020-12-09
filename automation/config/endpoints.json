@@ -1,0 +1,14 @@
+{
+  "ActiveDirectory": "login.microsoftonline.com",
+  "SqlDatabase": "database.windows.net",
+  "Storage": "core.windows.net",
+  "Gallery": "gallery.azure.com",
+  "ServiceBus": "servicebus.windows.net",
+  "KeyVault": "vault.azure.net",
+  "Portal": "portal.azure.com",
+  "ResourceManager": "management.azure.com",
+  "Graph": "graph.microsoft.com",
+  "PostgreSql": "postgres.database.azure.com",
+  "Cosmos": "documents.azure.com",
+  "Function": "azurewebsites.net"
+}
